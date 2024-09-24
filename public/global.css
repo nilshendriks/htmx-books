@@ -1,0 +1,149 @@
+:root {
+  color-scheme: light dark;
+
+  --color-red: red;
+  --color-green: green;
+  --color-blue: blue;
+  --color-yellow: yellow;
+  --color-orange: darkorange;
+  --color-grey: grey;
+
+  --color-alias-primary: var(--color-orange);
+
+  --color-alias-danger: var(--color-red);
+  --color-alias-alert: var(--color-red);
+  --color-alias-error: var(--color-red);
+
+  --bg-color: #ffffff;
+  --text-color: #000000;
+
+  --color-ui-background-transparent: rgba(255, 255, 255, 0.1);
+  --color-ui-background-primary: var(--color-alias-primary);
+  --color-ui-background-active: #f0f0f0;
+  --color-ui-background-light: #ddd;
+  --color-ui-border-lighter: #eee;
+  --color-ui-background-dark: #000;
+  --color-ui-background-danger: var(--color-alias-danger);
+
+  --color-ui-text-default: #000;
+  --color-ui-text-active: yellow;
+  --color-ui-text-primary: var(--color-alias-primary);
+  --color-ui-text-light: #fff;
+  --color-ui-text-on-dark: #fff;
+  --color-ui-text-dark: #000;
+  --color-ui-text-disabled: #ccc;
+  --color-ui-text-on-primary: #fff;
+  --color-ui-text-on-danger: #000;
+  --color-ui-text-danger: var(--color-alias-danger);
+
+  --font-family-text-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+
+  --color-ui-border-default: #000;
+  --color-ui-border-primary: var(--color-alias-primary);
+  --color-ui-border-disabled: #ccc;
+  --color-ui-border-lighter: #eee;
+  --color-ui-border-dark: #000;
+  --color-ui-border-darker: #ddd;
+}
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Global dark mode styles */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+  }
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-family-text-body);
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 1em;
+  padding: 1em;
+}
+
+header,
+main,
+footer {
+  border: 1px solid #000;
+  border-radius: 4px;
+  width: 100%;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-content: center;
+  text-align: center;
+  padding: 1em;
+}
+
+header * {
+  margin: 0;
+}
+
+main {
+  /* width: 100%; */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  align-items: start;
+  gap: 1em;
+  padding: 1em;
+}
+
+footer {
+  text-align: center;
+}
+
+/* Tables */
+th {
+  text-align: left;
+}
+
+th:last-child {
+  width: 25%;
+  min-width: 170px;
+}
+
+/* lists */
+
+dl {
+}
+
+dt {
+  font-weight: 700;
+}
+
+dd {
+  margin: 0 0 24px;
+}
+
+.list-books {
+  display: grid;
+  gap: 1rem;
+}
+
+.list-books li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}

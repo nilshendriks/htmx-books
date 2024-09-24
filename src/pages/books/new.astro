@@ -1,0 +1,39 @@
+
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Add a New Book">
+  <main>
+    <h1>Add a New Book</h1>
+    <form action="/api/books/new" method="POST" class="form-container">
+      <fieldset class="fields-container">
+<legend>Book fields</legend>
+      <fieldset>
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" required />
+      </fieldset>
+
+      <fieldset>
+
+      <label for="author">Author:</label>
+      <input type="text" id="author" name="author" required />
+
+      </fieldset>
+      </fieldset>
+
+    <div class="button-group__container">
+      <div class="button-group">
+
+      <button class="button button--primary" type="submit">Add Book</button>
+      </div>
+    </div>
+    </form>
+    <hr />
+    <div class="button-group__container">
+      <div class="button-group button-group--align-left">
+        <a class="button" href="/">Back to all books</a>
+      </div>
+    </div>
+  </main>
+</Layout>

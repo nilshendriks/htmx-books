@@ -1,0 +1,29 @@
+---
+// src/pages/books/view.astroi
+import Layout from '../../layouts/Layout.astro';
+import { GET } from '../api/books.ts';
+
+const { id } = Astro.url.searchParams.get('id'); // Get the book ID from the query parameters
+const response = await GET(Astro);
+const books = [
+  { id: 1, title: '1984', author: 'George Orwell' },
+  { id: 2, title: 'Brave New World', author: 'Aldous Huxley' },
+  { id: 3, title: 'The Catcher in the Rye', author: 'J.D. Salinger' }
+];
+
+// Find the specific book based on the ID
+const book = books.find(book => book.id === parseInt(id, 10));
+
+if (!book) {
+  throw new Error('Book not found');
+}
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+<h1>{book.title}</h1>
+    <p>Author: {book.author}</p>
+    <p>Description: This is a detailed description of {book.title}.</p>
+    <a href="/">Back to Book List</a>
+  </main>
+</Layout>

@@ -1,0 +1,24 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import books from '../../data/books.json';  // or fetch from your API if you have one
+
+// Get the dynamic id from the URL params
+const { id } = Astro.params;
+
+// Find the specific book based on id
+const book = books.find((b) => b.id === Number(id));
+
+if (!book) {
+  // throw new Error("Book not found");
+  return Astro.redirect('/404');
+}
+
+---
+
+<Layout title={book.title}>
+  <main>
+    <h1>{book.title}</h1>
+    <p>Author: {book.author}</p>
+    <a href="/">Back to all books</a>
+  </main>
+</Layout>

@@ -1,0 +1,37 @@
+fieldset {
+    border: 1px solid var(--color-grey);
+    border-radius: 4px;
+    margin: 0;
+    padding: 1.5em;
+}
+
+input {
+    border: 1px solid var(--color-grey);
+    border-radius: 4px;
+    font-family: var(--font-family-text-body);
+    font-size: 1em;
+    line-height: 24px;
+    padding: 9px 8px;
+}
+
+.error {
+    color: var(--color-alias-error);
+}
+
+.fields-container {
+    display: grid;
+    gap: 1em;
+}
+
+.form-container {
+    display: grid;
+    gap: 1em;
+}
+
+.fields-container fieldset {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    /* display: flex; */
+    gap: 1em;
+    align-items: center;
+}
